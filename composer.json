@@ -1,0 +1,13 @@
+{
+    "name": "osmeo/projet_mvc",
+    "require": {
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Core\\": "core/"
+        }
+    }
+}
