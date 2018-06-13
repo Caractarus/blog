@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Repository;
+namespace App\Model;
 
 use App\Entity\Article;
-use App\Model\Repository;
+use App\Model\DataBase;
 use \PDO;
 
 /**
  * Class ArticleRepository CRUD
  */
-class ArticleRepository extends Repository
+class ArticleRepository extends DataBase
 {
     /**
      * @param array Give the entire articles list sorted out DESC
@@ -54,7 +54,7 @@ class ArticleRepository extends Repository
     }
 
     /**
-     * @param array $articleUpdate Allows to update a targetted article
+     * @param array $articleUpdate Retrieve a targetted article to update
      * @return $articleUpdate
      */
     public function getUpdatedArticle()

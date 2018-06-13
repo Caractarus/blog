@@ -1,8 +1,8 @@
 <?php
 
 use App\Service\ValidationService as Check;
-use App\Model\ErrorRepository;
-use App\Repository\Pagingrepository as Paging;
+use App\Service\ErrorRepository;
+use App\Entity\Paging as Paging;
 
 $content = ob_start();
 

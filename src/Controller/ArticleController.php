@@ -2,10 +2,11 @@
 
 namespace App\Controller;
 
-use App\Repository\ArticleRepository;
+use App\Model\ArticleRepository;
+use App\Model\CommentRepository;
 use App\Form\ArticleType;
-use App\Repository\DBAuthRepository as DBAuth;
-use App\Model\ErrorRepository;
+use App\Service\ErrorRepository;
+use App\Form\CommentType;
 
 /**
  * Link between the index file and the views through different models
@@ -29,6 +30,18 @@ class ArticleController
     {
         $articleRepository = new ArticleRepository();
         $articleToShow = $articleRepository->getArticle($_GET['id']);
+        
+        $commentRepository = new CommentRepository();
+        
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $commentType = new CommentType();
+            if ($commentType->isValid()) {
+                $commentRepository->add();
+            } else {
+                $error->commentType->notValid();
+            }
+        }
+
         require '../view/article/article.php';
     }
 
@@ -37,8 +50,8 @@ class ArticleController
      */
     public function administrate($pageNb, $current, $start, $perPage)
     {
-        $auth = new DBAUth();
-        $errorRepository = new ErrorRepository();
+        /*$auth = new DBAUth();
+        $errorRepository = new ErrorRepository();*/
 
         
         /*if (!$auth->logged()) {

@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Model\FormType;
+use App\Form\FormType;
 use App\Service\ValidationService;
 
 /**
@@ -13,9 +13,9 @@ class ArticleType extends FormType implements FormInterface
     /**
      * @var string Constants listing the different errors the form validation may encounter
      */
-    const TITLE_INVALID = 'Merci de renseigner un titre';
-    const AUTHOR_INVALID = 'Merci de renseigner un nom d\'Auteur';
-    const CONTENT_INVALID = 'Merci de renseigner du contenu pour cet article';
+    const TITLE_INVALID = 'Renseignez un titre';
+    const AUTHOR_INVALID = 'Renseignez un nom d\'Auteur';
+    const CONTENT_INVALID = 'Renseignez du contenu';
 
     /**
      * This method check if the data required by the Form are correct or not

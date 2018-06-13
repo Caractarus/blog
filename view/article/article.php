@@ -1,7 +1,7 @@
 <?php
 
 use App\Service\ValidationService as Check;
-use App\Model\ErrorRepository;
+use App\Service\ErrorRepository;
 
 $content = ob_start();
 
@@ -20,6 +20,21 @@ if ($check->varIsValid($articleToShow) === true) {
 
 
 ?>
+
+<form method="POST" action="">
+    <div class="form-group">
+        <label>Pseudo</label>
+        <input type="text" class="form-control" name="pseudo">
+    </div>
+        <label>Commentaires</label>
+    <div class="form-group">
+        <textarea class="form-control" name="comment"></textarea>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Envoyer" class="btn btn-primary">
+    </div>
+</form>
+
 <a href="index.php/?page=article.index&p=1">Retour à la liste des articles</a>
 <?php
 

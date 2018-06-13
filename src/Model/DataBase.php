@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\Model;
+namespace App\Model;
 
 use \PDO;
 
@@ -8,7 +8,7 @@ use \PDO;
  * @param PDO Gère la connexion à la BDD
  * retun $this->db
  */
-abstract class Repository // Utilisation de abstract pour empecher d'instancier cette classe
+abstract class DataBase // Utilisation de abstract pour empecher d'instancier cette classe
 {
     private $db;
     
@@ -19,7 +19,7 @@ abstract class Repository // Utilisation de abstract pour empecher d'instancier 
     protected function getPDO() // Protected pour laisser accès à la méthode aux classes filles
     {
         $host = 'localhost';
-        $dbName = 'users';
+        $dbName = 'test';
         $dbUser = 'root';
         $dbPsw = '';
 

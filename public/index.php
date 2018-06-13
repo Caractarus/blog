@@ -3,8 +3,8 @@
 require_once "../vendor/autoload.php"; // Déclaration de l'autoloader de composer
 
 use App\Controller\ArticleController;
-use App\Model\ErrorRepository;
-use App\Repository\PagingRepository;
+use App\Service\ErrorRepository;
+use App\Entity\Paging;
 
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
@@ -16,7 +16,7 @@ if (isset($_GET['page'])) {
             } else {
                 $perPage = 5;
             }
-            $paging = new PagingRepository($perPage);
+            $paging = new Paging($perPage);
             $pageNb = $paging->pageNb();
             $current = $paging->current();
             $start = $paging->start();

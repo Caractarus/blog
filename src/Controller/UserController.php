@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Model;
+namespace App\Controller;
 
-abstract class Controller
+abstract class UserController
 {
 
     private $userService;
@@ -12,7 +12,7 @@ abstract class Controller
         $this->userService = $userService;
     }
 
-    // Faire ref a l'utilisateur de SESSION et tester le role admin avec la dfocntion is granted
+    // Faire ref a l'utilisateur de SESSION et tester le role admin avec la fonction is granted
     //  si il est admin et si il a pas accès redirection (page connexion)
     protected function isAdmin()
     {

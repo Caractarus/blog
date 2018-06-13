@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repository;
+namespace App\Entity;
 
-use App\Model\Repository;
+use App\Model\DataBase;
 
-class PagingRepository extends Repository
+class Paging extends DataBase
 {
     /**
      * @var $perPage Description of articles number displayed per pages
